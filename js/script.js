@@ -116,14 +116,17 @@ const nextBtn = document.getElementById("nextCurso");
 const prevBtn = document.getElementById("prevCurso");
 
 let scrollAmount = 0;
-const scrollStep = 340;
 
-// calcula o limite real
+function getCardWidth() {
+    const card = carousel.querySelector("div");
+    const gap = 32; // gap-8 do tailwind
+    return card.offsetWidth + gap;
+}
+
 function getMaxScroll() {
     return carousel.scrollWidth - carousel.parentElement.offsetWidth;
 }
 
-// atualizar setas
 function updateArrows() {
 
     const maxScroll = getMaxScroll();
@@ -141,10 +144,9 @@ function updateArrows() {
     }
 }
 
-// botão próximo
 nextBtn.addEventListener("click", () => {
 
-    scrollAmount += scrollStep;
+    scrollAmount += getCardWidth();
 
     const maxScroll = getMaxScroll();
 
@@ -157,10 +159,9 @@ nextBtn.addEventListener("click", () => {
     updateArrows();
 });
 
-// botão anterior
 prevBtn.addEventListener("click", () => {
 
-    scrollAmount -= scrollStep;
+    scrollAmount -= getCardWidth();
 
     if (scrollAmount < 0) {
         scrollAmount = 0;
@@ -171,5 +172,4 @@ prevBtn.addEventListener("click", () => {
     updateArrows();
 });
 
-// estado inicial
 updateArrows();
