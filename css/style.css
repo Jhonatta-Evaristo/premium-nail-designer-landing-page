@@ -1,0 +1,114 @@
+/* Navbar Glass Effect */
+.glass-nav {
+    background: rgba(253, 251, 247, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(74, 35, 24, 0.05);
+}
+
+/* Scroll Animations */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-delay-1 {
+    transition-delay: 0.1s;
+}
+
+.reveal-delay-2 {
+    transition-delay: 0.2s;
+}
+
+/* Premium Inputs */
+.input-premium {
+    transition: all 0.3s ease;
+    border: 1px solid #E8DFD0;
+}
+
+.input-premium:focus {
+    border-color: #7d3a28;
+    box-shadow: 0 0 0 4px rgba(125, 58, 40, 0.1);
+    outline: none;
+}
+
+/* Radio Buttons Cards Premium */
+.radio-card input:checked+div {
+    border-color: #4a2318;
+    background-color: #fdf8f5;
+}
+
+.radio-card input:checked+div .radio-icon {
+    background-color: #4a2318;
+    border-color: #4a2318;
+}
+
+.radio-card input:checked+div .radio-icon::after {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+    margin: 4px auto;
+}
+
+/* Parallax Background */
+.parallax-bg {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Loader Animation */
+.loader {
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top: 2px solid #fff;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+    display: none;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* SPA Transitions */
+.view-section {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.view-section.active {
+    display: block;
+    opacity: 1;
+}
+
+#cursoCarousel {
+    scroll-behavior: smooth;
+}
+
+/* esconder scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}

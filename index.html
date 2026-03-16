@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dani Moura | Nail Designer & Mentora</title>
+
+    <!-- Google Fonts: Playfair Display & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/png" href="https://img.icons8.com/ios-filled/50/4a2318/manicure.png">
+    <!-- FontAwesome para Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brown: {
+                            50: '#fdf8f5',
+                            100: '#f8ece5',
+                            200: '#eed5c6',
+                            300: '#e1b69d',
+                            400: '#d18f6d',
+                            500: '#c57147',
+                            600: '#b75b37',
+                            700: '#98462d',
+                            800: '#7d3a28',
+                            900: '#4a2318',
+                            950: '#2b120b',
+                        },
+                        beige: {
+                            light: '#FDFBF7',
+                            DEFAULT: '#F5F0E6',
+                            dark: '#E8DFD0'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'premium': '0 10px 40px -10px rgba(74, 35, 24, 0.1)',
+                        'premium-hover': '0 20px 40px -10px rgba(74, 35, 24, 0.2)',
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse-border 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'fade-in': 'fadeIn 0.5s ease-out forwards',
+                    },
+                    keyframes: {
+                        'pulse-border': {
+                            '0%, 100%': { borderColor: 'rgba(74, 35, 24, 0.2)', boxShadow: '0 0 0 0 rgba(74, 35, 24, 0)' },
+                            '50%': { borderColor: 'rgba(74, 35, 24, 0.8)', boxShadow: '0 0 15px 0 rgba(74, 35, 24, 0.3)' },
+                        },
+                        'fadeIn': {
+                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+</head>
+
+<body class="font-sans text-gray-800 bg-beige-light antialiased overflow-x-hidden">
+
+    <!-- ==========================================
+         VISÃO 1: LANDING PAGE PRINCIPAL
+         ========================================== -->
+    <div id="landing-view" class="view-section active">
+
+        <!-- Navbar -->
+        <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-4 glass-nav">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8 flex justify-between items-center">
+                <a href="#" class="font-serif text-2xl font-bold text-brown-900 tracking-tight">Dani Moura<span
+                        class="text-brown-500">.</span></a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#sobre"
+                        class="text-sm font-medium text-gray-600 hover:text-brown-900 transition-colors">Sobre</a>
+                    <a href="#cursos"
+                        class="text-sm font-medium text-gray-600 hover:text-brown-900 transition-colors">Cursos</a>
+                    <a href="#beneficios"
+                        class="text-sm font-medium text-gray-600 hover:text-brown-900 transition-colors">Benefícios</a>
+                    <button onclick="openForm()"
+                        class="px-6 py-2.5 bg-brown-900 text-white text-sm font-medium rounded-full hover:bg-brown-800 transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                        Inscreva-se
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-brown-900 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu"
+                class="hidden md:hidden absolute top-full left-0 w-full bg-white shadow-lg border-t border-gray-100">
+                <div class="flex flex-col px-6 py-4 space-y-4">
+                    <a href="#sobre" class="mobile-link text-gray-600 hover:text-brown-900 font-medium">Sobre</a>
+                    <a href="#cursos" class="mobile-link text-gray-600 hover:text-brown-900 font-medium">Cursos</a>
+                    <a href="#beneficios"
+                        class="mobile-link text-gray-600 hover:text-brown-900 font-medium">Benefícios</a>
+                    <button onclick="openForm()"
+                        class="mobile-link w-full text-center px-6 py-3 bg-brown-900 text-white rounded-full font-medium mt-2">
+                        Inscreva-se
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- 1. Hero Section -->
+        <section id="inicio" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+            <div
+                class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-brown-100 blur-3xl opacity-50 z-0">
+            </div>
+            <div
+                class="absolute bottom-0 left-0 -ml-20 -mb-20 w-72 h-72 rounded-full bg-beige-dark blur-3xl opacity-50 z-0">
+            </div>
+
+            <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+
+                    <!-- Text Content -->
+                    <div class="max-w-2xl reveal">
+                        <span
+                            class="inline-block py-1 px-3 rounded-full bg-brown-100 text-brown-800 text-xs font-semibold tracking-wider uppercase mb-6">Curso
+                            VIP Individual • São Luís, MA</span>
+                        <h1 class="font-serif text-4xl lg:text-6xl text-brown-900 leading-tight mb-6">
+                            Eleve o nível do seu <span class="italic text-brown-600">Nail Design</span> e fature mais.
+                        </h1>
+                        <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                            Aprenda técnicas avançadas e posicionamento premium. Transforme sua mesa de atendimento em
+                            um negócio altamente lucrativo e seja referência na sua região.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <button onclick="openForm()"
+                                class="flex justify-center items-center px-8 py-4 bg-brown-900 text-white rounded-full font-medium hover:bg-brown-800 transition-all shadow-premium hover:shadow-premium-hover transform hover:-translate-y-1 w-full sm:w-auto">
+                                Quero me inscrever
+                            </button>
+                            <a href="#cursos"
+                                class="flex justify-center items-center px-8 py-4 bg-transparent border-2 border-brown-900 text-brown-900 rounded-full font-medium hover:bg-brown-50 transition-all w-full sm:w-auto animate-pulse-slow">
+                                Conhecer cursos
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Image -->
+                    <div class="relative lg:ml-auto reveal reveal-delay-2 mt-8 lg:mt-0">
+                        <div
+                            class="absolute inset-0 bg-brown-200 rounded-[2rem] transform rotate-3 scale-105 origin-bottom-right opacity-50">
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Dani Moura Nail Designer"
+                            class="relative z-10 w-full max-w-md mx-auto rounded-[2rem] shadow-2xl object-cover h-[450px] lg:h-[600px]">
+
+                        <div class="absolute bottom-6 lg:bottom-10 -left-4 lg:-left-12 bg-white p-4 rounded-2xl shadow-xl z-20 flex items-center gap-4 animate-bounce"
+                            style="animation-duration: 3s;">
+                            <div
+                                class="w-12 h-12 rounded-full bg-brown-100 flex items-center justify-center text-brown-600">
+                                <i class="fas fa-gem text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-500 font-medium">Vagas VIP</p>
+                                <p class="text-sm font-bold text-brown-900">Turmas Limitadas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Sobre / História -->
+        <section id="sobre" class="py-20 lg:py-32 bg-white">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div class="order-2 lg:order-1 relative reveal">
+                        <div class="absolute -inset-4 border border-brown-200 rounded-[2rem] transform -rotate-3 z-0">
+                        </div>
+                        <img src="img/dani.jpg" alt="Dani Moura em atendimento"
+                            class="relative z-10 w-full rounded-[2rem] shadow-lg object-cover h-[400px] lg:h-[550px]">
+                    </div>
+
+                    <div class="order-1 lg:order-2 reveal reveal-delay-1">
+                        <h2 class="font-serif text-3xl lg:text-4xl text-brown-900 mb-6">A profissional por trás do
+                            método</h2>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            Olá, sou a <strong>Dani Moura</strong>. Dediquei minha carreira a dominar as melhores
+                            técnicas de alongamento e embelezamento de unhas, criando um padrão de excelência no meu
+                            estúdio em São Luís.
+                        </p>
+                        <p class="text-gray-600 mb-8 leading-relaxed">
+                            Mais do que unhas perfeitas, ensino minhas alunas a construírem um posicionamento premium.
+                            Acredito que você pode faturar alto trabalhando com o que ama, desde que tenha a técnica
+                            certa e saiba cobrar o seu valor real.
+                        </p>
+
+                        <div class="grid grid-cols-2 gap-6 pt-6 border-t border-gray-100">
+                            <div>
+                                <p class="text-3xl font-serif text-brown-600 mb-1">VIP</p>
+                                <p class="text-sm text-gray-500 font-medium uppercase tracking-wider">Atenção Exclusiva
+                                </p>
+                            </div>
+                            <div>
+                                <p class="text-3xl font-serif text-brown-600 mb-1">Premium</p>
+                                <p class="text-sm text-gray-500 font-medium uppercase tracking-wider">Técnica & Gestão
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Seção de Cursos -->
+        <section id="cursos" class="py-20 lg:py-32 bg-beige-light">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+                    <span class="text-brown-600 font-medium text-sm tracking-widest uppercase">Programas
+                        Presenciais</span>
+                    <h2 class="font-serif text-3xl lg:text-4xl text-brown-900 mt-2 mb-4">Escolha o seu próximo nível
+                    </h2>
+                    <p class="text-gray-600">Treinamentos focados na prática intensiva para você sair preparada para
+                        atender clientes de alto padrão.</p>
+                </div>
+
+                <div class="relative max-w-6xl mx-auto">
+
+                    <!-- Botão anterior -->
+                    <button id="prevCurso"
+                        class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-6 bg-white shadow-lg w-12 h-12 rounded-full flex items-center justify-center text-brown-900 hover:bg-brown-50 z-20">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+
+                    <!-- Container -->
+                    <div class="overflow-x-auto scroll-smooth no-scrollbar">
+                        <div id="cursoCarousel" class="flex gap-8 transition-transform duration-500">
+
+                            <!-- Curso 1 -->
+                            <div
+                                class="min-w-[320px] bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-premium transition-all group">
+
+                                <div class="relative h-56 overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702"
+                                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                </div>
+
+                                <div class="p-8">
+                                    <h3 class="font-serif text-xl text-brown-900 font-semibold mb-3">
+                                        Curso VIP Individual
+                                    </h3>
+
+                                    <p class="text-gray-600 text-sm mb-6">
+                                        Imersão completa presencial para corrigir seus erros e elevar seu nível técnico.
+                                    </p>
+
+                                    <button onclick="openForm()"
+                                        class="w-full py-3 bg-brown-900 text-white rounded-xl font-medium hover:bg-brown-800 transition-colors">
+                                        Quero me inscrever
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Curso 2 -->
+                            <div
+                                class="min-w-[320px] bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-premium transition-all group">
+
+                                <div class="relative h-56 overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1607779097040-26e80aa78e66"
+                                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                </div>
+
+                                <div class="p-8">
+                                    <h3 class="font-serif text-xl text-brown-900 font-semibold mb-3">
+                                        Alongamento em Fibra
+                                    </h3>
+
+                                    <p class="text-gray-600 text-sm mb-6">
+                                        Aprenda a técnica mais procurada do mercado com estrutura perfeita.
+                                    </p>
+
+                                    <button onclick="openForm()"
+                                        class="w-full py-3 bg-brown-900 text-white rounded-xl font-medium hover:bg-brown-800 transition-colors">
+                                        Quero me inscrever
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Curso 3 -->
+                            <div
+                                class="min-w-[320px] bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-premium transition-all group">
+
+                                <div class="relative h-56 overflow-hidden">
+                                    <img src="img/Unhas.jpg"
+                                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                </div>
+
+                                <div class="p-8">
+                                    <h3 class="font-serif text-xl text-brown-900 font-semibold mb-3">
+                                        Esmaltação Premium
+                                    </h3>
+
+                                    <p class="text-gray-600 text-sm mb-6">
+                                        Aprenda acabamento perfeito e técnicas para aumentar o valor do atendimento.
+                                    </p>
+
+                                    <button onclick="openForm()"
+                                        class="w-full py-3 bg-brown-900 text-white rounded-xl font-medium hover:bg-brown-800 transition-colors">
+                                        Quero me inscrever
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Botão próximo -->
+                    <button id="nextCurso"
+                        class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-6 bg-white shadow-lg w-12 h-12 rounded-full flex items-center justify-center text-brown-900 hover:bg-brown-50 z-20">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Seção de Benefícios -->
+        <section id="beneficios" class="relative py-24 parallax-bg"
+            style="background-image: linear-gradient(rgba(43, 18, 11, 0.92), rgba(74, 35, 24, 0.88)), url('https://images.unsplash.com/photo-1516975080661-46bfa2c281c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+                <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+                    <h2 class="font-serif text-3xl lg:text-4xl text-white mb-4">Por que fazer o VIP Individual?</h2>
+                    <p class="text-brown-100">Uma experiência pensada exclusivamente no seu crescimento profissional e
+                        financeiro.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div
+                        class="bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-2xl text-center hover:bg-white/20 transition-all reveal">
+                        <div
+                            class="w-14 h-14 mx-auto bg-brown-400 rounded-full flex items-center justify-center text-white text-2xl mb-6">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3 class="text-lg font-serif text-white font-semibold mb-3">Atenção 100% Sua</h3>
+                        <p class="text-brown-50 text-sm leading-relaxed">Correção minuciosa dos seus erros em tempo
+                            real, sem dividir a atenção com turmas grandes.</p>
+                    </div>
+                    <div
+                        class="bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-2xl text-center hover:bg-white/20 transition-all reveal reveal-delay-1">
+                        <div
+                            class="w-14 h-14 mx-auto bg-brown-400 rounded-full flex items-center justify-center text-white text-2xl mb-6">
+                            <i class="fas fa-gem"></i>
+                        </div>
+                        <h3 class="text-lg font-serif text-white font-semibold mb-3">Técnica Premium</h3>
+                        <p class="text-brown-50 text-sm leading-relaxed">Aprenda estruturas duradouras e um acabamento
+                            que justifica cobrar mais caro.</p>
+                    </div>
+                    <div
+                        class="bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-2xl text-center hover:bg-white/20 transition-all reveal reveal-delay-2">
+                        <div
+                            class="w-14 h-14 mx-auto bg-brown-400 rounded-full flex items-center justify-center text-white text-2xl mb-6">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="text-lg font-serif text-white font-semibold mb-3">Aumento de Faturamento</h3>
+                        <p class="text-brown-50 text-sm leading-relaxed">Não é só sobre unhas, é sobre como se
+                            posicionar para atrair as melhores clientes.</p>
+                    </div>
+                    <div
+                        class="bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-2xl text-center hover:bg-white/20 transition-all reveal reveal-delay-3">
+                        <div
+                            class="w-14 h-14 mx-auto bg-brown-400 rounded-full flex items-center justify-center text-white text-2xl mb-6">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h3 class="text-lg font-serif text-white font-semibold mb-3">Certificado VIP</h3>
+                        <p class="text-brown-50 text-sm leading-relaxed">Ao final da imersão, leve para o seu estúdio um
+                            certificado de excelência presencial.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Final -->
+        <section class="py-20 bg-brown-900 text-center relative overflow-hidden">
+            <div class="absolute inset-0 opacity-10"
+                style="background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 30px 30px;"></div>
+            <div class="max-w-4xl mx-auto px-6 lg:px-8 relative z-10 reveal">
+                <h2 class="font-serif text-3xl lg:text-5xl text-white mb-6">Sua mesa de atendimento não precisa estar
+                    vazia.</h2>
+                <p class="text-brown-200 text-lg mb-10 max-w-2xl mx-auto">Invista na sua qualificação e veja seu estúdio
+                    se transformar em referência em São Luís.</p>
+                <button onclick="openForm()"
+                    class="inline-block px-10 py-5 bg-white text-brown-900 rounded-full font-bold text-lg hover:bg-beige-light transition-all shadow-xl transform hover:-translate-y-1">
+                    Quero me inscrever agora
+                </button>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-brown-950 pt-20 pb-10 border-t border-brown-900">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div
+                    class="flex flex-col md:flex-row justify-between items-center gap-6 mb-10 border-b border-brown-900 pb-10">
+                    <a href="#" class="font-serif text-3xl font-bold text-white tracking-tight">Dani Moura<span
+                            class="text-brown-500">.</span></a>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="w-12 h-12 rounded-full bg-brown-900 text-white flex items-center justify-center hover:bg-brown-700 transition-colors text-xl"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#"
+                            class="w-12 h-12 rounded-full bg-brown-900 text-white flex items-center justify-center hover:bg-brown-700 transition-colors text-xl"><i
+                                class="fab fa-linkedin"></i></a>
+                        <a href="#"
+                            class="w-12 h-12 rounded-full bg-brown-900 text-white flex items-center justify-center hover:bg-brown-700 transition-colors text-xl"><i
+                                class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-brown-300 text-sm">
+                    <p>&copy; 2026 Dani Moura. Todos os direitos reservados. Estúdio localizado em São Luís, MA.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+    <!-- ==========================================
+         VISÃO 2: PÁGINA DE FORMULÁRIO (OUTRA PÁGINA)
+         ========================================== -->
+    <div id="form-view" class="view-section min-h-screen bg-beige-light pb-20">
+
+        <!-- Navbar Simples para Voltar -->
+        <div class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+            <div class="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
+                <button onclick="closeForm()"
+                    class="text-brown-800 hover:text-brown-600 font-medium flex items-center gap-2 transition-colors">
+                    <i class="fas fa-arrow-left"></i> Voltar para a página inicial
+                </button>
+                <span class="font-serif font-bold text-brown-900 hidden sm:block">Dani Moura<span
+                        class="text-brown-500">.</span></span>
+            </div>
+        </div>
+
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 pt-12">
+
+            <!-- Cabeçalho do Formulário -->
+            <div class="text-center mb-10 animate-fade-in">
+                <h1 class="font-serif text-3xl lg:text-4xl text-brown-900 mb-4">Aplicação: Curso VIP Dani Moura</h1>
+                <p
+                    class="text-gray-600 text-lg leading-relaxed bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                    Esse formulário é para nail designers que desejam participar do <strong class="text-brown-900">Curso
+                        VIP individual</strong> no estúdio da Dani em São Luís.<br><br>
+                    Como as vagas são limitadas, precisamos entender melhor seu momento profissional antes de liberar as
+                    datas disponíveis.
+                </p>
+            </div>
+
+            <!-- O Formulário de 15 Perguntas -->
+            <form id="vipForm" class="space-y-10 animate-fade-in" style="animation-delay: 0.1s;">
+
+                <div class="bg-white p-6 md:p-10 rounded-[2rem] shadow-premium border border-gray-100 space-y-10">
+
+                    <!-- P1: Nome -->
+                    <div class="space-y-3">
+                        <label for="nome" class="block text-lg font-medium text-brown-900">1. Nome Completo *</label>
+                        <input type="text" id="nome" required
+                            class="w-full px-5 py-4 rounded-xl bg-beige-light input-premium text-gray-800 placeholder-gray-400 text-lg"
+                            placeholder="Seu nome completo">
+                    </div>
+
+                    <!-- P2: WhatsApp -->
+                    <div class="space-y-3">
+                        <label for="whatsapp" class="block text-lg font-medium text-brown-900">2. WhatsApp *</label>
+                        <input type="tel" id="whatsapp" required
+                            class="w-full px-5 py-4 rounded-xl bg-beige-light input-premium text-gray-800 placeholder-gray-400 text-lg"
+                            placeholder="(00) 00000-0000">
+                    </div>
+
+                    <!-- P3: Cidade/Estado -->
+                    <div class="space-y-3">
+                        <label for="cidade" class="block text-lg font-medium text-brown-900">3. Cidade / Estado
+                            *</label>
+                        <input type="text" id="cidade" required
+                            class="w-full px-5 py-4 rounded-xl bg-beige-light input-premium text-gray-800 placeholder-gray-400 text-lg"
+                            placeholder="Ex: São Luís / MA">
+                    </div>
+
+                    <!-- P4: Instagram -->
+                    <div class="space-y-3">
+                        <label for="instagram" class="block text-lg font-medium text-brown-900">4. Instagram
+                            profissional *</label>
+                        <input type="text" id="instagram" required
+                            class="w-full px-5 py-4 rounded-xl bg-beige-light input-premium text-gray-800 placeholder-gray-400 text-lg"
+                            placeholder="@seuinstagram">
+                    </div>
+
+                    <hr class="border-gray-100">
+
+                    <!-- P5: Já trabalha? -->
+                    <div class="space-y-4">
+                        <label class="block text-lg font-medium text-brown-900">5. Você já trabalha como Nail Designer?
+                            *</label>
+                        <div class="grid gap-3">
+                            <label class="radio-card cursor-pointer relative">
+                                <input type="radio" name="trabalha_nail" value="ja_atendo" required class="sr-only">
+                                <div
+                                    class="flex items-center p-4 border-2 border-gray-200 rounded-xl transition-all hover:border-brown-300">
+                                    <div
+                                        class="radio-icon w-5 h-5 rounded-full border-2 border-gray-300 mr-4 transition-colors">
+                                    </div>
+                                    <span class="text-gray-700 font-medium">Sim, já atendo clientes</span>
+                                </div>
+                            </label>
+                            <label class="radio-card cursor-pointer relative">
+                                <input type="radio" name="trabalha_nail" value="comecando" required class="sr-only">
+                                <div
+                                    class="flex items-center p-4 border-2 border-gray-200 rounded-xl transition-all hover:border-brown-300">
+                                    <div
+                                        class="radio-icon w-5 h-5 rounded-full border-2 border-gray-300 mr-4 transition-colors">
+                                    </div>
+                                    <span class="text-gray-700 font-medium">Estou começando agora</span>
+                                </div>
+                            </label>
+                            <label class="radio-card cursor-pointer relative">
+                                <input type="radio" name="trabalha_nail" value="iniciante_zero" required
+                                    class="sr-only">
+                                <div
+                                    class="flex items-center p-4 border-2 border-gray-200 rounded-xl transition-all hover:border-brown-300">
+                                    <div
+                                        class="radio-icon w-5 h-5 rounded-full border-2 border-gray-300 mr-4 transition-colors">
+                                    </div>
+                                    <span class="text-gray-700 font-medium">Sou iniciante do zero</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- P6: Acompanha trabalho? -->
+                    <div class="space-y-4">
+                        <label class="block text-lg font-medium text-brown-900">6. Já acompanha o meu trabalho?
+                            *</label>
+                        <div class="grid gap-3">
+                            <label class="radio-card cursor-pointer relative">
+                                <input type="radio" name="acompanha" value="sim" required class="sr-only">
+                                <div
+                                    class="flex items-center p-4 border-2 border-gray-200 rounded-xl transition-all hover:border-brown-300">
+                                    <div
+                                        class="radio-icon w-5 h-5 rounded-full border-2 border-gray-300 mr-4 transition-colors">
+                                    </div>
+                                    <span class="text-gray-700 font-medium">Já sim</span>
+                                </div>
+                            </label>
+                            <label class="radio-card cursor-pointer relative">
+                                <input type="radio" name="acompanha" value="nao" required class="sr-only">
+                                <div
+                                    class="flex items-center p-4 border-2 border-gray-200 rounded-xl transition-all hover:border-brown-300">
+                                    <div
+                                        class="radio-icon w-5 h-5 rounded-full border-2 border-gray-300 mr-4 transition-colors">
+                                    </div>
+                                    <span class="text-gray-700 font-medium">Ainda não</span>
+                                </div>
+                            </label>
+                            <label class="radio-card cursor-pointer relative">
+                                <input type="radio" name="acompanha" value="indicacao" required class="sr-only">
+                                <div
+                                    class="flex items-center p-4 border-2 border-gray-200 rounded-xl transition-all hover:border-brown-300">
+                                    <div
+                                        class="radio-icon w-5 h-5 rounded-full border-2 border-gray-300 mr-4 transition-colors">
+                                    </div>
+                                    <span class="text-gray-700 font-medium">Recebi uma indicação</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- P7: Tempo de área -->
+                    <div class="space-y-4">
+                        <label class="block text-lg font-medium text-brown-900">7. Há quanto tempo você trabalha na
+                            área? *</label>
+                        <div class="grid sm:grid-cols-2 gap-3">
+                            <label class="radio-card cursor-pointer relative"><input type="radio" name="tempo_area"
+                                    value="menos_6m" required class="sr-only">
+                                <div class="flex items-center p-4 border-2 border-gray-200 rounded-xl">
+                                    <div class="radio-icon w-5 h-5 rounded-full border-2 border-gray-300 mr-4"></div>
+                                    <span class="text-gray-700 font-medium">Menos de 6 meses</span>
+                                </div>
+                            </label>
+                            <label class="radio-card cursor-pointer relative"><input type="radio" name="tempo_area"
+                                    value="6m_1a" required class="sr-only">
+                                <div class="flex items-center p-4 border-2 border-gray-200 rounded-xl">
+                                    <div class="radio-icon w-5 h-5 rounded-full border-2 border-gray-300 mr-4"></div>
+                                    <span class="text-gray-700 font-medium">6 meses a 1 ano</span>
+                                </div>
+                            </label>
+                            <label class="radio-card cursor-pointer relative"><input type="radio" name="tempo_area"
+                                    value="1a_3a" required class="sr-only">
+                                <div class="flex items-center p-4 border-2 border-gray-200 rounded-xl">
+                                    <div class="radio-icon w-5 h-5 rounded-full border-2 border-gray-300 mr-4"></div>
+                                    <span class="text-gray-700 font-medium">1 a 3 anos</span>
+                                </div>
+                            </label>
+                            <label class="radio-card cursor-pointer relative"><input type="radio" name="tempo_area"
+                                    value="mais_3a" required class="sr-only">
+                                <div class="flex items-center p-4 border-2 border-gray-200 rounded-xl">
+                                    <div class="radio-icon w-5 h-5 rounded-full border-2 border-gray-300 mr-4"></div>
+                                    <span class="text-gray-700 font-medium">Mais de 3 anos</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- P8: Quantas clientes -->
+                    <div class="space-y-4">
+                        <label class="block text-lg font-medium text-brown-900">8. Quantas clientes você atende por
+                            semana? *</label>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="radio-card cursor-pointer relative"><input type="radio" name="clientes_semana"
+                                    value="1_5" required class="sr-only">
+                                <div class="flex items-center p-4 border-2 border-gray-200 rounded-xl">
+                                    <div class="radio-icon w-5 h-5 rounded-full border-2 border-gray-300 mr-3"></div>
+                                    <span class="text-gray-700 font-medium">1 a 5</span>
+                                </div>
+                            </label>
+                            <label class="radio-card cursor-pointer relative"><input type="radio" name="clientes_semana"
+                                    value="6_10" required class="sr-only">
+                                <div class="flex items-center p-4 border-2 border-gray-200 rounded-xl">
+                                    <div class="radio-icon w-5 h-5 rounded-full border-2 border-gray-300 mr-3"></div>
+                                    <span class="text-gray-700 font-medium">6 a 10</span>
+                                </div>
+                            </label>
+                            <label class="radio-card cursor-pointer relative"><input type="radio" name="clientes_semana"
+                                    value="11_20" required class="sr-only">
+                                <div class="flex items-center p-4 border-2 border-gray-200 rounded-xl">
+                                    <div class="radio-icon w-5 h-5 rounded-full border-2 border-gray-300 mr-3"></div>
+                                    <span class="text-gray-700 font-medium">11 a 20</span>
+                                </div>
+                            </label>
+                            <label class="radio-card cursor-pointer relative"><input type="radio" name="clientes_semana"
+                                    value="mais_20" required class="sr-only">
+                                <div class="flex items-center p-4 border-2 border-gray-200 rounded-xl">
+                                    <div class="radio-icon w-5 h-5 rounded-full border-2 border-gray-300 mr-3"></div>
+                                    <span class="text-gray-700 font-medium">Mais de 20</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- P9: Valor médio -->
+                    <div class="space-y-4">
+                        <label class="block text-lg font-medium text-brown-900">9. Qual o valor médio que você cobra por
+                            procedimento? *</label>
+                        <div class="grid sm:grid-cols-2 gap-3">
+                            <label class="radio-card cursor-pointer relative"><input type="radio" name="valor_medio"
+                                    value="ate_60" required class="sr-only">
+                                <div class="flex items-center p-4 border-2 border-gray-200 rounded-xl">
+                                    <div class="radio-icon w-5 h-5 rounded-full border-2 border-gray-300 mr-3"></div>
+                                    <span class="text-gray-700 font-medium">Até R$60</span>
+                                </div>
+                            </label>
+                            <label class="radio-card cursor-pointer relative"><input type="radio" name="valor_medio"
+                                    value="60_100" required class="sr-only">
+                                <div class="flex items-center p-4 border-2 border-gray-200 rounded-xl">
+                                    <div class="radio-icon w-5 h-5 rounded-full border-2 border-gray-300 mr-3"></div>
+                                    <span class="text-gray-700 font-medium">R$60 – R$100</span>
+                                </div>
+                            </label>
+                            <label class="radio-card cursor-pointer relative"><input type="radio" name="valor_medio"
+                                    value="100_150" required class="sr-only">
+                                <div class="flex items-center p-4 border-2 border-gray-200 rounded-xl">
+                                    <div class="radio-icon w-5 h-5 rounded-full border-2 border-gray-300 mr-3"></div>
+                                    <span class="text-gray-700 font-medium">R$100 – R$150</span>
+                                </div>
+                            </label>
+                            <label class="radio-card cursor-pointer relative"><input type="radio" name="valor_medio"
+                                    value="mais_150" required class="sr-only">
+                                <div class="flex items-center p-4 border-2 border-gray-200 rounded-xl">
+                                    <div class="radio-icon w-5 h-5 rounded-full border-2 border-gray-300 mr-3"></div>
+                                    <span class="text-gray-700 font-medium">Mais de R$150</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- P10: Faturamento atual -->
+                    <div class="space-y-4">
+                        <label class="block text-lg font-medium text-brown-900">10. Quanto você fatura em média por mês
+                            com unhas? *</label>
+                        <div class="grid gap-3">
+                            <label class="radio-card cursor-pointer relative"><input type="radio"
+                                    name="faturamento_atual" value="1k_3k" required class="sr-only">
+                                <div class="flex items-center p-4 border-2 border-gray-200 rounded-xl">
+                                    <div class="radio-icon w-5 h-5 rounded-full border-2 border-gray-300 mr-4"></div>
+                                    <span class="text-gray-700 font-medium">R$1000 a R$3000</span>
+                                </div>
+                            </label>
+                            <label class="radio-card cursor-pointer relative"><input type="radio"
+                                    name="faturamento_atual" value="3k_5k" required class="sr-only">
+                                <div class="flex items-center p-4 border-2 border-gray-200 rounded-xl">
+                                    <div class="radio-icon w-5 h-5 rounded-full border-2 border-gray-300 mr-4"></div>
+                                    <span class="text-gray-700 font-medium">R$3000 a R$5000</span>
+                                </div>
+                            </label>
+                            <label class="radio-card cursor-pointer relative"><input type="radio"
+                                    name="faturamento_atual" value="5k_7k" required class="sr-only">
+                                <div class="flex items-center p-4 border-2 border-gray-200 rounded-xl">
+                                    <div class="radio-icon w-5 h-5 rounded-full border-2 border-gray-300 mr-4"></div>
+                                    <span class="text-gray-700 font-medium">R$5000 a R$7500</span>
+                                </div>
+                            </label>
+                            <label class="radio-card cursor-pointer relative"><input type="radio"
+                                    name="faturamento_atual" value="7.5k_10k" required class="sr-only">
+                                <div class="flex items-center p-4 border-2 border-gray-200 rounded-xl">
+                                    <div class="radio-icon w-5 h-5 rounded-full border-2 border-gray-300 mr-4"></div>
+                                    <span class="text-gray-700 font-medium">R$7500 a R$10.000</span>
+                                </div>
+                            </label>
+                            <label class="radio-card cursor-pointer relative"><input type="radio"
+                                    name="faturamento_atual" value="mais_10k" required class="sr-only">
+                                <div class="flex items-center p-4 border-2 border-gray-200 rounded-xl">
+                                    <div class="radio-icon w-5 h-5 rounded-full border-2 border-gray-300 mr-4"></div>
+                                    <span class="text-gray-700 font-medium">R$10.000+</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <hr class="border-gray-100">
+
+                    <!-- P11: Maior dificuldade -->
+                    <div class="space-y-3">
+                        <label for="dificuldade" class="block text-lg font-medium text-brown-900">11. Qual é sua maior
+                            dificuldade hoje como nail designer? *</label>
+                        <textarea id="dificuldade" required rows="3"
+                            class="w-full px-5 py-4 rounded-xl bg-beige-light input-premium text-gray-800 placeholder-gray-400 text-lg resize-none"
+                            placeholder="Ex: Captação de clientes, durabilidade do alongamento..."></textarea>
+                    </div>
+
+                    <!-- P12: Técnica a aperfeiçoar -->
+                    <div class="space-y-3">
+                        <label for="tecnica" class="block text-lg font-medium text-brown-900">12. Qual técnica você mais
+                            quer aperfeiçoar hoje? *</label>
+                        <input type="text" id="tecnica" required
+                            class="w-full px-5 py-4 rounded-xl bg-beige-light input-premium text-gray-800 placeholder-gray-400 text-lg"
+                            placeholder="Ex: Fibra de vidro, molde f1, esmaltação em gel...">
+                    </div>
+
+                    <!-- P13: Faturamento Desejado -->
+                    <div class="space-y-4">
+                        <label class="block text-lg font-medium text-brown-900">13. Se você conseguisse melhorar sua
+                            técnica e cobrar mais pelas unhas, quanto gostaria de faturar por mês? *</label>
+                        <div class="grid sm:grid-cols-2 gap-3">
+                            <label class="radio-card cursor-pointer relative"><input type="radio"
+                                    name="faturamento_desejado" value="3k" required class="sr-only">
+                                <div class="flex items-center p-4 border-2 border-gray-200 rounded-xl">
+                                    <div class="radio-icon w-5 h-5 rounded-full border-2 border-gray-300 mr-3"></div>
+                                    <span class="text-gray-700 font-medium">R$3.000</span>
+                                </div>
+                            </label>
+                            <label class="radio-card cursor-pointer relative"><input type="radio"
+                                    name="faturamento_desejado" value="5k" required class="sr-only">
+                                <div class="flex items-center p-4 border-2 border-gray-200 rounded-xl">
+                                    <div class="radio-icon w-5 h-5 rounded-full border-2 border-gray-300 mr-3"></div>
+                                    <span class="text-gray-700 font-medium">R$5.000</span>
+                                </div>
+                            </label>
+                            <label class="radio-card cursor-pointer relative"><input type="radio"
+                                    name="faturamento_desejado" value="8k" required class="sr-only">
+                                <div class="flex items-center p-4 border-2 border-gray-200 rounded-xl">
+                                    <div class="radio-icon w-5 h-5 rounded-full border-2 border-gray-300 mr-3"></div>
+                                    <span class="text-gray-700 font-medium">R$8.000</span>
+                                </div>
+                            </label>
+                            <label class="radio-card cursor-pointer relative"><input type="radio"
+                                    name="faturamento_desejado" value="10k_mais" required class="sr-only">
+                                <div class="flex items-center p-4 border-2 border-gray-200 rounded-xl">
+                                    <div class="radio-icon w-5 h-5 rounded-full border-2 border-gray-300 mr-3"></div>
+                                    <span class="text-gray-700 font-medium">R$10.000+</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- P14: Disponibilidade São Luís -->
+                    <div class="space-y-4">
+                        <label class="block text-lg font-medium text-brown-900">14. Você teria disponibilidade para vir
+                            até São Luís para fazer o VIP presencial no estúdio da Dani? *</label>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="radio-card cursor-pointer relative"><input type="radio"
+                                    name="disponibilidade_slz" value="sim" required class="sr-only">
+                                <div class="flex items-center p-4 border-2 border-gray-200 rounded-xl">
+                                    <div class="radio-icon w-5 h-5 rounded-full border-2 border-gray-300 mr-3"></div>
+                                    <span class="text-gray-700 font-medium">Sim</span>
+                                </div>
+                            </label>
+                            <label class="radio-card cursor-pointer relative"><input type="radio"
+                                    name="disponibilidade_slz" value="nao" required class="sr-only">
+                                <div class="flex items-center p-4 border-2 border-gray-200 rounded-xl">
+                                    <div class="radio-icon w-5 h-5 rounded-full border-2 border-gray-300 mr-3"></div>
+                                    <span class="text-gray-700 font-medium">Não</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- P15: Por que mudar carreira -->
+                    <div class="space-y-3">
+                        <label for="motivo_vip" class="block text-lg font-medium text-brown-900">15. Por que você
+                            acredita que esse VIP pode mudar sua carreira como nail designer? *</label>
+                        <textarea id="motivo_vip" required rows="4"
+                            class="w-full px-5 py-4 rounded-xl bg-beige-light input-premium text-gray-800 placeholder-gray-400 text-lg resize-none"
+                            placeholder="Escreva sua resposta aqui..."></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="pt-6">
+                        <button type="submit" id="submitBtn"
+                            class="w-full py-5 bg-brown-900 text-white rounded-xl font-bold text-xl hover:bg-brown-800 transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-3">
+                            <span>Enviar minhas respostas</span>
+                            <div class="loader" id="btnLoader"></div>
+                        </button>
+                        <p class="text-sm text-center text-gray-500 mt-4"><i class="fas fa-lock mr-1"></i> As
+                            informações fornecidas são confidenciais.</p>
+                    </div>
+                </div>
+            </form>
+
+            <!-- Mensagem de Sucesso -->
+            <div id="successMessage"
+                class="hidden text-center py-20 bg-white rounded-[2rem] shadow-premium mt-10 border border-gray-100">
+                <div
+                    class="w-24 h-24 mx-auto bg-green-100 text-green-600 rounded-full flex items-center justify-center text-5xl mb-6">
+                    <i class="fas fa-check"></i>
+                </div>
+                <h3 class="font-serif text-3xl lg:text-4xl text-brown-900 mb-4">Respostas recebidas com sucesso!</h3>
+                <p class="text-gray-600 text-lg mb-8 max-w-lg mx-auto leading-relaxed">
+                    Muito obrigada pelo seu tempo. Nossa equipe irá analisar cuidadosamente o seu perfil e entraremos em
+                    contato via WhatsApp com os próximos passos.
+                </p>
+                <button onclick="closeForm()"
+                    class="px-10 py-4 bg-brown-900 text-white rounded-full font-bold hover:bg-brown-800 transition-colors shadow-md">
+                    Voltar para o site
+                </button>
+            </div>
+
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
