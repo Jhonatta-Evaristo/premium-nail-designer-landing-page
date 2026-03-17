@@ -131,24 +131,16 @@ function updateArrows() {
 
     const maxScroll = getMaxScroll();
 
-    // 👉 se for mobile, some com tudo e PARA A FUNÇÃO
-    if (window.innerWidth < 768) {
-        prevBtn.classList.add("hidden");
-        nextBtn.classList.add("hidden");
-        return;
-    }
-
-    // 👉 desktop continua normal
     if (scrollAmount <= 0) {
-        prevBtn.classList.add("hidden");
+        prevBtn.style.display = "none";
     } else {
-        prevBtn.classList.remove("hidden");
+        prevBtn.style.display = "flex";
     }
 
     if (scrollAmount >= maxScroll) {
-        nextBtn.classList.add("hidden");
+        nextBtn.style.display = "none";
     } else {
-        nextBtn.classList.remove("hidden");
+        nextBtn.style.display = "flex";
     }
 }
 

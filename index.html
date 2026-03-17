@@ -5,18 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dani Moura | Nail Designer & Mentora</title>
-
-    <!-- Google Fonts: Playfair Display & Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
         rel="stylesheet">
     <link rel="icon" type="image/png" href="https://img.icons8.com/ios-filled/50/4a2318/manicure.png">
-    <!-- FontAwesome para Ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <!-- TailwindCSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -24,23 +20,11 @@
                 extend: {
                     colors: {
                         brown: {
-                            50: '#fdf8f5',
-                            100: '#f8ece5',
-                            200: '#eed5c6',
-                            300: '#e1b69d',
-                            400: '#d18f6d',
-                            500: '#c57147',
-                            600: '#b75b37',
-                            700: '#98462d',
-                            800: '#7d3a28',
-                            900: '#4a2318',
-                            950: '#2b120b',
+                            50: '#fdf8f5', 100: '#f8ece5', 200: '#eed5c6', 300: '#e1b69d',
+                            400: '#d18f6d', 500: '#c57147', 600: '#b75b37', 700: '#98462d',
+                            800: '#7d3a28', 900: '#4a2318', 950: '#2b120b',
                         },
-                        beige: {
-                            light: '#FDFBF7',
-                            DEFAULT: '#F5F0E6',
-                            dark: '#E8DFD0'
-                        }
+                        beige: { light: '#FDFBF7', DEFAULT: '#F5F0E6', dark: '#E8DFD0' }
                     },
                     fontFamily: {
                         serif: ['"Playfair Display"', 'serif'],
@@ -68,14 +52,13 @@
             }
         }
     </script>
-
 </head>
 
 <body class="font-sans text-gray-800 bg-beige-light antialiased overflow-x-hidden">
 
-    <!-- ==========================================
-         VISÃO 1: LANDING PAGE PRINCIPAL
-         ========================================== -->
+    <!-- ========================================== 
+       VISÃO 1: LANDING PAGE PRINCIPAL
+  ========================================== -->
     <div id="landing-view" class="view-section active">
 
         <!-- Navbar -->
@@ -83,7 +66,6 @@
             <div class="max-w-7xl mx-auto px-6 lg:px-8 flex justify-between items-center">
                 <a href="#" class="font-serif text-2xl font-bold text-brown-900 tracking-tight">Dani Moura<span
                         class="text-brown-500">.</span></a>
-
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="#sobre"
@@ -97,13 +79,11 @@
                         Inscreva-se
                     </button>
                 </div>
-
                 <!-- Mobile Menu Button -->
                 <button id="mobile-menu-btn" class="md:hidden text-brown-900 focus:outline-none">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
             </div>
-
             <!-- Mobile Menu -->
             <div id="mobile-menu"
                 class="hidden md:hidden absolute top-full left-0 w-full bg-white shadow-lg border-t border-gray-100">
@@ -128,10 +108,8 @@
             <div
                 class="absolute bottom-0 left-0 -ml-20 -mb-20 w-72 h-72 rounded-full bg-beige-dark blur-3xl opacity-50 z-0">
             </div>
-
             <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
                 <div class="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-
                     <!-- Text Content -->
                     <div class="max-w-2xl reveal">
                         <span
@@ -155,7 +133,6 @@
                             </a>
                         </div>
                     </div>
-
                     <!-- Image -->
                     <div class="relative lg:ml-auto reveal reveal-delay-2 mt-8 lg:mt-0">
                         <div
@@ -164,7 +141,6 @@
                         <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                             alt="Dani Moura Nail Designer"
                             class="relative z-10 w-full max-w-md mx-auto rounded-[2rem] shadow-2xl object-cover h-[450px] lg:h-[600px]">
-
                         <div class="absolute bottom-6 lg:bottom-10 -left-4 lg:-left-12 bg-white p-4 rounded-2xl shadow-xl z-20 flex items-center gap-4 animate-bounce"
                             style="animation-duration: 3s;">
                             <div
@@ -184,54 +160,52 @@
         <!-- 2. Sobre / História -->
         <section id="sobre" class="py-20 lg:py-32 bg-white">
             <div class="max-w-7xl mx-auto px-6 lg:px-8">
-                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- No mobile: flex coluna. No desktop: grid 2 colunas -->
+                <div class="flex flex-col lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
 
-                    <div class="reveal reveal-delay-1">
+                    <!-- H2 — aparece primeiro no mobile, some no desktop (replicado no bloco de texto) -->
+                    <h2 class="font-serif text-3xl lg:text-4xl text-brown-900 mb-6 lg:hidden reveal">
+                        A profissional por trás do método
+                    </h2>
 
-                        <h2 class="font-serif text-3xl lg:text-4xl text-brown-900 mb-6">
-                            A profissional por trás do método
-                        </h2>
-
-                        <!-- FOTO -->
+                    <!-- IMAGEM — segunda no mobile, coluna esquerda no desktop -->
+                    <div class="reveal reveal-delay-1 lg:order-1">
                         <div class="relative my-8 max-w-md mx-auto">
-
-                            <!-- detalhe da borda -->
                             <div class="absolute inset-0 border border-brown-200 rounded-[2rem] transform -rotate-3">
                             </div>
-
-                            <!-- imagem -->
                             <img src="img/dani.jpg" alt="Dani Moura em atendimento"
                                 class="relative w-full rounded-[2rem] shadow-lg object-cover h-[400px] lg:h-[550px]">
-
                         </div>
+                    </div>
 
+                    <!-- TEXTO — terceiro no mobile, coluna direita no desktop -->
+                    <div class="reveal lg:order-2">
+                        <!-- H2 visível apenas no desktop -->
+                        <h2 class="font-serif text-3xl lg:text-4xl text-brown-900 mb-6 hidden lg:block">
+                            A profissional por trás do método
+                        </h2>
                         <p class="text-gray-600 mb-6 leading-relaxed">
                             Olá, sou a <strong>Dani Moura</strong>. Dediquei minha carreira a dominar as melhores
                             técnicas de alongamento e embelezamento de unhas, criando um padrão de excelência no meu
                             estúdio em São Luís.
                         </p>
-
                         <p class="text-gray-600 mb-8 leading-relaxed">
                             Mais do que unhas perfeitas, ensino minhas alunas a construírem um posicionamento premium.
                             Acredito que você pode faturar alto trabalhando com o que ama, desde que tenha a técnica
                             certa e saiba cobrar o seu valor real.
                         </p>
-
                         <div class="grid grid-cols-2 gap-6 pt-6 border-t border-gray-100">
                             <div>
                                 <p class="text-3xl font-serif text-brown-600 mb-1">VIP</p>
-                                <p class="text-sm text-gray-500 font-medium uppercase tracking-wider">
-                                    Atenção Exclusiva
+                                <p class="text-sm text-gray-500 font-medium uppercase tracking-wider">Atenção Exclusiva
                                 </p>
                             </div>
                             <div>
                                 <p class="text-3xl font-serif text-brown-600 mb-1">Premium</p>
-                                <p class="text-sm text-gray-500 font-medium uppercase tracking-wider">
-                                    Técnica & Gestão
+                                <p class="text-sm text-gray-500 font-medium uppercase tracking-wider">Técnica & Gestão
                                 </p>
                             </div>
                         </div>
-
                     </div>
 
                 </div>
@@ -249,100 +223,72 @@
                     <p class="text-gray-600">Treinamentos focados na prática intensiva para você sair preparada para
                         atender clientes de alto padrão.</p>
                 </div>
-
                 <div class="relative max-w-6xl mx-auto">
-
                     <!-- Botão anterior -->
                     <button id="prevCurso"
                         class="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-6 bg-white shadow-lg w-12 h-12 rounded-full items-center justify-center text-brown-900 hover:bg-brown-50 z-20">
                         <i class="fas fa-chevron-left"></i>
                     </button>
-
                     <!-- Container -->
-                    <div class="overflow-x-auto md:overflow-hidden scroll-smooth no-scrollbar">
+                    <div class="overflow-x-auto scroll-smooth no-scrollbar">
                         <div id="cursoCarousel" class="flex gap-8 transition-transform duration-500">
-
                             <!-- Curso 1 -->
                             <div
                                 class="min-w-[320px] bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-premium transition-all group">
-
                                 <div class="relative h-56 overflow-hidden">
                                     <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702"
                                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                                 </div>
-
                                 <div class="p-8">
-                                    <h3 class="font-serif text-xl text-brown-900 font-semibold mb-3">
-                                        Curso VIP Individual
-                                    </h3>
-
-                                    <p class="text-gray-600 text-sm mb-6">
-                                        Imersão completa presencial para corrigir seus erros e elevar seu nível técnico.
-                                    </p>
-
+                                    <h3 class="font-serif text-xl text-brown-900 font-semibold mb-3">Curso VIP
+                                        Individual</h3>
+                                    <p class="text-gray-600 text-sm mb-6">Imersão completa presencial para corrigir seus
+                                        erros e elevar seu nível técnico.</p>
                                     <button onclick="openForm()"
-                                        class="w-full py-3 bg-brown-900 text-white rounded-xl font-medium hover:bg-brown-800 transition-colors">
-                                        Quero me inscrever
-                                    </button>
+                                        class="w-full py-3 bg-brown-900 text-white rounded-xl font-medium hover:bg-brown-800 transition-colors">Quero
+                                        me inscrever</button>
                                 </div>
                             </div>
-
                             <!-- Curso 2 -->
                             <div
                                 class="min-w-[320px] bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-premium transition-all group">
-
                                 <div class="relative h-56 overflow-hidden">
                                     <img src="https://images.unsplash.com/photo-1607779097040-26e80aa78e66"
                                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                                 </div>
-
                                 <div class="p-8">
-                                    <h3 class="font-serif text-xl text-brown-900 font-semibold mb-3">
-                                        Alongamento em Fibra
-                                    </h3>
-
-                                    <p class="text-gray-600 text-sm mb-6">
-                                        Aprenda a técnica mais procurada do mercado com estrutura perfeita.
-                                    </p>
-
+                                    <h3 class="font-serif text-xl text-brown-900 font-semibold mb-3">Alongamento em
+                                        Fibra</h3>
+                                    <p class="text-gray-600 text-sm mb-6">Aprenda a técnica mais procurada do mercado
+                                        com estrutura perfeita.</p>
                                     <button onclick="openForm()"
-                                        class="w-full py-3 bg-brown-900 text-white rounded-xl font-medium hover:bg-brown-800 transition-colors">
-                                        Quero me inscrever
-                                    </button>
+                                        class="w-full py-3 bg-brown-900 text-white rounded-xl font-medium hover:bg-brown-800 transition-colors">Quero
+                                        me inscrever</button>
                                 </div>
                             </div>
-
                             <!-- Curso 3 -->
                             <div
                                 class="min-w-[320px] bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-premium transition-all group">
-
                                 <div class="relative h-56 overflow-hidden">
                                     <img src="img/Unhas.jpg"
                                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                                 </div>
-
                                 <div class="p-8">
-                                    <h3 class="font-serif text-xl text-brown-900 font-semibold mb-3">
-                                        Esmaltação Premium
+                                    <h3 class="font-serif text-xl text-brown-900 font-semibold mb-3">Esmaltação Premium
                                     </h3>
-
-                                    <p class="text-gray-600 text-sm mb-6">
-                                        Aprenda acabamento perfeito e técnicas para aumentar o valor do atendimento.
-                                    </p>
-
+                                    <p class="text-gray-600 text-sm mb-6">Aprenda acabamento perfeito e técnicas para
+                                        aumentar o valor do atendimento.</p>
                                     <button onclick="openForm()"
-                                        class="w-full py-3 bg-brown-900 text-white rounded-xl font-medium hover:bg-brown-800 transition-colors">
-                                        Quero me inscrever
-                                    </button>
+                                        class="w-full py-3 bg-brown-900 text-white rounded-xl font-medium hover:bg-brown-800 transition-colors">Quero
+                                        me inscrever</button>
                                 </div>
                             </div>
 
                         </div>
                     </div>
-
                     <!-- Botão próximo -->
                     <button id="nextCurso"
-                        class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-6 bg-white shadow-lg w-12 h-12 rounded-full items-center justify-center text-brown-900 hover:bg-brown-50 z-20">
+                        class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-6 bg-white shadow-lg w-12 h-12 rounded-full flex items-center justify-center text-brown-900 hover:bg-brown-50 z-20">
                         <i class="fas fa-chevron-right"></i>
                     </button>
                 </div>
@@ -358,7 +304,6 @@
                     <p class="text-brown-100">Uma experiência pensada exclusivamente no seu crescimento profissional e
                         financeiro.</p>
                 </div>
-
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <div
                         class="bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-2xl text-center hover:bg-white/20 transition-all reveal">
@@ -444,15 +389,15 @@
                 </div>
             </div>
         </footer>
-    </div>
 
+    </div><!-- /landing-view -->
 
     <!-- ==========================================
-         VISÃO 2: PÁGINA DE FORMULÁRIO (OUTRA PÁGINA)
-         ========================================== -->
+       VISÃO 2: PÁGINA DE FORMULÁRIO
+  ========================================== -->
     <div id="form-view" class="view-section min-h-screen bg-beige-light pb-20">
 
-        <!-- Navbar Simples para Voltar -->
+        <!-- Navbar Simples -->
         <div class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
             <div class="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
                 <button onclick="closeForm()"
@@ -478,9 +423,8 @@
                 </p>
             </div>
 
-            <!-- O Formulário de 15 Perguntas -->
+            <!-- Formulário -->
             <form id="vipForm" class="space-y-10 animate-fade-in" style="animation-delay: 0.1s;">
-
                 <div class="bg-white p-6 md:p-10 rounded-[2rem] shadow-premium border border-gray-100 space-y-10">
 
                     <!-- P1: Nome -->
@@ -558,7 +502,7 @@
                         </div>
                     </div>
 
-                    <!-- P6: Acompanha trabalho? -->
+                    <!-- P6: Acompanha? -->
                     <div class="space-y-4">
                         <label class="block text-lg font-medium text-brown-900">6. Já acompanha o meu trabalho?
                             *</label>
@@ -632,7 +576,7 @@
                         </div>
                     </div>
 
-                    <!-- P8: Quantas clientes -->
+                    <!-- P8: Clientes por semana -->
                     <div class="space-y-4">
                         <label class="block text-lg font-medium text-brown-900">8. Quantas clientes você atende por
                             semana? *</label>
@@ -758,7 +702,7 @@
                             placeholder="Ex: Captação de clientes, durabilidade do alongamento..."></textarea>
                     </div>
 
-                    <!-- P12: Técnica a aperfeiçoar -->
+                    <!-- P12: Técnica -->
                     <div class="space-y-3">
                         <label for="tecnica" class="block text-lg font-medium text-brown-900">12. Qual técnica você mais
                             quer aperfeiçoar hoje? *</label>
@@ -767,7 +711,7 @@
                             placeholder="Ex: Fibra de vidro, molde f1, esmaltação em gel...">
                     </div>
 
-                    <!-- P13: Faturamento Desejado -->
+                    <!-- P13: Faturamento desejado -->
                     <div class="space-y-4">
                         <label class="block text-lg font-medium text-brown-900">13. Se você conseguisse melhorar sua
                             técnica e cobrar mais pelas unhas, quanto gostaria de faturar por mês? *</label>
@@ -803,7 +747,7 @@
                         </div>
                     </div>
 
-                    <!-- P14: Disponibilidade São Luís -->
+                    <!-- P14: Disponibilidade SLZ -->
                     <div class="space-y-4">
                         <label class="block text-lg font-medium text-brown-900">14. Você teria disponibilidade para vir
                             até São Luís para fazer o VIP presencial no estúdio da Dani? *</label>
@@ -825,7 +769,7 @@
                         </div>
                     </div>
 
-                    <!-- P15: Por que mudar carreira -->
+                    <!-- P15: Por que VIP -->
                     <div class="space-y-3">
                         <label for="motivo_vip" class="block text-lg font-medium text-brown-900">15. Por que você
                             acredita que esse VIP pode mudar sua carreira como nail designer? *</label>
@@ -834,7 +778,7 @@
                             placeholder="Escreva sua resposta aqui..."></textarea>
                     </div>
 
-                    <!-- Submit Button -->
+                    <!-- Submit -->
                     <div class="pt-6">
                         <button type="submit" id="submitBtn"
                             class="w-full py-5 bg-brown-900 text-white rounded-xl font-bold text-xl hover:bg-brown-800 transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-3">
@@ -844,6 +788,7 @@
                         <p class="text-sm text-center text-gray-500 mt-4"><i class="fas fa-lock mr-1"></i> As
                             informações fornecidas são confidenciais.</p>
                     </div>
+
                 </div>
             </form>
 
@@ -866,9 +811,9 @@
             </div>
 
         </div>
-    </div>
-    <script src="js/script.js"></script>
+    </div><!-- /form-view -->
 
+    <script src="js/script.js"></script>
 </body>
 
 </html>
