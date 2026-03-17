@@ -131,6 +131,14 @@ function updateArrows() {
 
     const maxScroll = getMaxScroll();
 
+    // 👉 se for mobile, some com tudo e PARA A FUNÇÃO
+    if (window.innerWidth < 768) {
+        prevBtn.classList.add("hidden");
+        nextBtn.classList.add("hidden");
+        return;
+    }
+
+    // 👉 desktop continua normal
     if (scrollAmount <= 0) {
         prevBtn.classList.add("hidden");
     } else {
