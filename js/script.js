@@ -132,15 +132,15 @@ function updateArrows() {
     const maxScroll = getMaxScroll();
 
     if (scrollAmount <= 0) {
-        prevBtn.style.display = "none";
+        prevBtn.classList.add("hidden");
     } else {
-        prevBtn.style.display = "flex";
+        prevBtn.classList.remove("hidden");
     }
 
     if (scrollAmount >= maxScroll) {
-        nextBtn.style.display = "none";
+        nextBtn.classList.add("hidden");
     } else {
-        nextBtn.style.display = "flex";
+        nextBtn.classList.remove("hidden");
     }
 }
 
